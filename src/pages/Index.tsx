@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import DonationForm from "@/components/DonationForm";
@@ -210,26 +211,6 @@ const Index = () => {
               <CarouselPrevious className="hidden md:flex" />
               <CarouselNext className="hidden md:flex" />
             </Carousel>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Section - Case Studies */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-fandy-teal mb-4">Real Impact Across Industries</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how businesses like yours are building deeper customer connections and driving meaningful impact with Fandy.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {caseStudies.map((study, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CaseStudyCard {...study} />
-              </div>
-            ))}
           </div>
         </div>
       </section>
