@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import DonationForm from "@/components/DonationForm";
@@ -62,10 +63,10 @@ const Index = () => {
               <a href="#" className="hover:text-fandy-blue transition-colors">Pricing</a>
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="outline" className="text-fandy-teal border-fandy-blue hover:bg-fandy-blue/10">
+              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-fandy-teal">
                 Shopify app
               </Button>
-              <Button className="bg-fandy-blue hover:bg-fandy-blue-light text-fandy-teal font-medium">
+              <Button className="bg-white hover:bg-gray-100 text-fandy-teal font-medium">
                 Book a demo
               </Button>
             </div>
@@ -78,6 +79,14 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+              <div className="space-y-6 animate-fade-in">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-semibold mb-2">Experience Fandy in Action</h3>
+                  <p className="text-gray-300">See how your customers will interact with our donation platform</p>
+                </div>
+                <DonationForm />
+              </div>
+              
               <div className="space-y-8 animate-fade-in">
                 <div className="inline-block bg-fandy-teal-light px-4 py-2 rounded-full text-sm">
                   Go Global. Support Local.
@@ -123,14 +132,6 @@ const Index = () => {
                     <div className="text-sm text-gray-300">From 1,000+ reviews</div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="space-y-6 animate-fade-in">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-semibold mb-2">Experience Fandy in Action</h3>
-                  <p className="text-gray-300">See how your customers will interact with our donation platform</p>
-                </div>
-                <DonationForm />
               </div>
             </div>
           </div>
