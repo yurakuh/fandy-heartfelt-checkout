@@ -1,34 +1,47 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import DonationForm from "@/components/DonationForm";
-import CaseStudyCard from "@/components/CaseStudyCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Card } from "@/components/ui/card";
+import { ShoppingBag, Briefcase, Dog } from "lucide-react";
 
 const Index = () => {
-  const caseStudies = [
+  const useCases = [
     {
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      title: "Shopify E-commerce Integration",
-      description: "Boost customer loyalty by 52% and increase AOV by 26% with AI-powered personalized checkout donations.",
-      category: "E-commerce"
+      icon: Dog,
+      title: "Pet Store Chain",
+      subtitle: "E-commerce",
+      description: "Checkout charity boosts revenue and conversion — spend $100, and $10 is donated to an animal cause."
     },
     {
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
-      title: "QR Code Retail Experience",
-      description: "Transform physical stores with QR donation cards that create meaningful customer connections.",
-      category: "Retail"
+      icon: ShoppingBag,
+      title: "Shopify D2C Brand",
+      subtitle: "Direct-to-Consumer",
+      description: "Branded donation reports boost customer loyalty and repeat purchases."
     },
     {
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
-      title: "Corporate Social Responsibility",
-      description: "Engage employees and customers with transparent, trackable corporate giving programs.",
-      category: "Corporate"
+      icon: Briefcase,
+      title: "Etsy Merchant",
+      subtitle: "Marketplace",
+      description: "Includes donation postcards inside every delivered package — a delightful unboxing surprise."
     },
     {
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-      title: "Employee Gift Matching",
-      description: "Amplify employee donations with company matching programs that build team culture.",
-      category: "Employee"
+      icon: Dog,
+      title: "Veterinary Clinic Chain",
+      subtitle: "Healthcare",
+      description: "Donations sold at checkout; proceeds help fund treatments right at the clinic."
+    },
+    {
+      icon: Briefcase,
+      title: "Fintech Bank",
+      subtitle: "Financial Services",
+      description: "Micro-donations integrated into promotions — drives app engagement and customer connection."
+    },
+    {
+      icon: ShoppingBag,
+      title: "NDA Gambling Platform",
+      subtitle: "Gaming",
+      description: "Deposit funds? A percentage goes to charity — making deposits feel good."
     }
   ];
 
@@ -119,6 +132,84 @@ const Index = () => {
                 <DonationForm />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section - Horizontal Slider */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-fandy-teal mb-4">💼 Use Cases of Fandy's Impact Marketing</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover how businesses across industries are building deeper customer connections and driving meaningful impact with Fandy.
+            </p>
+          </div>
+          
+          <div className="max-w-6xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {useCases.map((useCase, index) => {
+                  const IconComponent = useCase.icon;
+                  return (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                      <Card className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden h-full">
+                        <div className="p-6 flex flex-col h-full">
+                          <div className="mb-4 flex items-center space-x-3">
+                            <div className="w-12 h-12 bg-fandy-blue/20 rounded-full flex items-center justify-center group-hover:bg-fandy-blue/30 transition-colors">
+                              <IconComponent className="w-6 h-6 text-fandy-teal" />
+                            </div>
+                            <div>
+                              <h3 className="text-lg font-semibold text-fandy-teal group-hover:text-fandy-teal-light transition-colors">
+                                {useCase.title}
+                              </h3>
+                              <span className="text-sm text-fandy-blue font-medium">
+                                {useCase.subtitle}
+                              </span>
+                            </div>
+                          </div>
+                          <p className="text-gray-600 leading-relaxed flex-grow">
+                            {useCase.description}
+                          </p>
+                        </div>
+                      </Card>
+                    </CarouselItem>
+                  );
+                })}
+                {/* CTA Slide */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden h-full bg-gradient-to-br from-fandy-teal to-fandy-teal-light">
+                    <div className="p-6 flex flex-col h-full items-center justify-center text-center text-white">
+                      <div className="mb-4">
+                        <div className="w-12 h-12 bg-fandy-blue rounded-full flex items-center justify-center mx-auto mb-3">
+                          <Briefcase className="w-6 h-6 text-fandy-teal" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2">
+                          Want to learn more?
+                        </h3>
+                        <p className="text-fandy-blue-light mb-4">
+                          See all solutions and start your journey today.
+                        </p>
+                      </div>
+                      <Button 
+                        className="bg-fandy-blue hover:bg-fandy-blue-light text-fandy-teal font-semibold"
+                        size="lg"
+                      >
+                        Contact Us
+                      </Button>
+                    </div>
+                  </Card>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
           </div>
         </div>
       </section>
