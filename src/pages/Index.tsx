@@ -59,11 +59,11 @@ const Index = () => {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-fandy-teal text-white py-20">
+      {/* Hero Section with Donation Form */}
+      <section className="bg-fandy-teal text-white min-h-screen py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
               <div className="space-y-8 animate-fade-in">
                 <div className="inline-block bg-fandy-teal-light px-4 py-2 rounded-full text-sm">
                   Go Global. Support Local.
@@ -76,20 +76,10 @@ const Index = () => {
                     Turn every checkout into a moment of personal impact — direct donations, thank-you messages, and real stories.
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-fandy-blue hover:bg-fandy-blue-light text-fandy-teal font-semibold px-8 py-4 text-lg">
-                    Book a demo
-                  </Button>
-                  <Button size="lg" variant="outline" className="border-fandy-blue text-fandy-blue hover:bg-fandy-blue/10 px-8 py-4 text-lg">
-                    Install Shopify app
-                  </Button>
-                </div>
-              </div>
-              
-              <div className="space-y-6 animate-fade-in">
-                <div className="text-right">
-                  <h2 className="text-2xl font-semibold mb-6">Your Discounts Are Boring. Try Donations.</h2>
-                  <div className="space-y-4 text-left">
+                
+                <div className="space-y-6">
+                  <h2 className="text-2xl font-semibold">Your Discounts Are Boring. Try Donations.</h2>
+                  <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-fandy-blue rounded-full"></div>
                       <span className="text-lg"><strong>Boost customer loyalty by 52%</strong></span>
@@ -106,7 +96,7 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4 justify-end">
+                <div className="flex items-center space-x-4">
                   <div className="flex -space-x-2">
                     <div className="w-10 h-10 bg-fandy-blue rounded-full border-2 border-white"></div>
                     <div className="w-10 h-10 bg-fandy-blue-light rounded-full border-2 border-white"></div>
@@ -120,21 +110,16 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="space-y-6 animate-fade-in">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-semibold mb-2">Experience Fandy in Action</h3>
+                  <p className="text-gray-300">See how your customers will interact with our donation platform</p>
+                </div>
+                <DonationForm />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Interactive Donation Form Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-fandy-gray">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-fandy-teal mb-4">Experience Fandy in Action</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how your customers will interact with our donation platform. Select a cause, share your impact, and track your giving history.
-            </p>
-          </div>
-          <DonationForm />
         </div>
       </section>
 
